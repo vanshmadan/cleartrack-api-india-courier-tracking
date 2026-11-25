@@ -1,0 +1,14 @@
+{
+  "name": "cleartrack-api-examples-node",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js examples for the ClearTrack courier tracking API (India)",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "track": "node track.mjs",
+    "usage": "node usage.mjs",
+    "bulk": "node bulk-track.mjs ../sample/awbs.csv"
+  },
+  "license": "MIT"
+}

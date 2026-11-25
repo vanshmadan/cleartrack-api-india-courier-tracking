@@ -1,4 +1,4 @@
-# ClearTrack API examples
+# India Courier Tracking API: Node.js & Python examples (ClearTrack)
 
 Node.js and Python examples for the [ClearTrack Tracking API](https://api.cleartrackpromise.in/docs): one REST API that tracks shipments across Indian couriers and returns the same normalised JSON for all of them.
 

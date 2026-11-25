@@ -92,6 +92,23 @@ Errors come back as `{"error": {"code": "...", "message": "..."}}`. The ones you
 
 Every call counts as one lookup, including cached answers. Active shipments are cached for 30 minutes, so polling the same number more often than that just uses up lookups.
 
+## Plans
+
+All prices in INR. Paid plans are prepaid for 30 days. Renewing an active plan adds the new 30 days to the days you have left.
+
+| Plan | Price | Valid for | Lookups included | Daily cap | Burst limit |
+|---|---|---|---|---|---|
+| Free Trial | Free | 14 days | 100 | 100 / day | 5 req/sec |
+| Starter | ₹399 | 30 days | 1,500 | 300 / day | 5 req/sec |
+| Growth | ₹999 | 30 days | 4,000 | 800 / day | 10 req/sec |
+| Business | ₹3,000 | 30 days | 12,000 | 2,400 / day | 20 req/sec |
+
+- Usage is counted in **lookups, not shipments**: every API call is one lookup, including cached answers and repeat checks of the same number.
+- Growth and Business also include the Shipment Analyzer (sign in with your ClearTrack account). Business gets priority email support; the other paid plans get standard email support.
+- Check what you have left at any time with `GET /v1/usage` (or [`node/usage.mjs`](node/usage.mjs) / [`python/usage.py`](python/usage.py)).
+
+Start the trial at https://api.cleartrackpromise.in/trial. See current pricing at https://api.cleartrackpromise.in/pricing.
+
 ## Security
 
 Call the API from your backend only. Don't put your API key in browser JavaScript or a mobile app. Keep it in an environment variable (see [`.env.example`](.env.example)).
